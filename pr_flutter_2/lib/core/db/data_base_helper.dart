@@ -17,7 +17,7 @@ class DataBaseHelper {
 
   Future<void> init() async {
     _appDocumentDirectory = await path.getApplicationDocumentsDirectory();
-    _pathDB = join(_appDocumentDirectory.path, 'booksstore.db');
+    _pathDB = join(_appDocumentDirectory.path, 'fashion_store.db');
 
     if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     } else {

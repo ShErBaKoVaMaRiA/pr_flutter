@@ -82,7 +82,7 @@ abstract class DataBaseRequest {
 
   /// Запрос для создания таблицы Users
   static const String _createTableUsers =
-      'CREATE TABLE "$tableUsers" ("id_user"	INTEGER,"Surname"	TEXT NOT NULL,"Name"	TEXT NOT NULL,"Middlename"	TEXT NOT NULL,"DateBirthday"	NUMERIC NOT NULL,"Discount"	INTEGER NOT NULL,"account_id"	INTEGER,FOREIGN KEY("account_id") REFERENCES "Accounts"("id_account") ON DELETE CASCADE,PRIMARY KEY("id_user"))';
+      'CREATE TABLE "$tableUsers" ("id_user"	INTEGER,"Surname"	TEXT NOT NULL,"Name"	TEXT NOT NULL,"Middlename"	TEXT NOT NULL,"DateBirthday"	NUMERIC NOT NULL,"Discount"	INTEGER NOT NULL,"account_id"	INTEGER NOT NULL UNIQUE,FOREIGN KEY("account_id") REFERENCES "Accounts"("id_account") ON DELETE CASCADE,PRIMARY KEY("id_user"))';
 
   /// Запрос для создания таблицы Products
   static const String _createTableProducts =

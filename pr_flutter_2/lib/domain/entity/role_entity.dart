@@ -1,9 +1,9 @@
 class RoleEntity {
-  late int id;
-  final String role;
+  late int id_role;
+  final String name_role;
 
   RoleEntity({
-    required this.role,
+    required this.name_role,
   });
 }
 

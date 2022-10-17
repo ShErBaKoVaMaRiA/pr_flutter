@@ -1,16 +1,24 @@
-# pr_flutter_2
+#ПРАКТИЧЕСКАЯ РАБОТА №2
+##«Работа с SQLite в Visual Studio Code»
+###Цель работы: реализовать класс, который отвечает за базу данных.
+###Реализовать следующие функции:
+###- init - инициализация базы данных для всех платформ
+###- onCreateTable - создание таблиц 
+###- onUpdateTable - обновление таблиц
+###- onInitTable - заполнение таблиц данными
+###- onDropDataBase - удаление базы данных 
+###Реализовать таблицы для предметной области "Магазин одежды"
+##Ход работы:
+В ходе работы был реализован проект для работы с базой данных предметной области книжного магазина. На основе чистой архитектуры:
+•	data - слой работы с данными. На этом уровне, например, описываем работу с внешним API.
+•	domain - слой бизнес-логики.
+•	internal - слой приложения. На этом уровне происходит внедрение зависимостей.
+•	presentation - слой представления. На этом уровне описываем UI приложения.
+Схема базы данных:
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+В проекте были созданы несколько файлов с расширением «.dart».
+1.	data_base_request – класс, в котором содержаться запросы на создание таблиц базы данных.
+2.	data_base_helper – класс взаимодействия с базой данных
+3.	В папке domain/entity находятся сущности таблиц,
+4.	В папке data/model находятся модели данных таблиц.
+##Вывод: в результате выполнения данной работы были реализованы 9 таблиц базы данных полсистемы «Магазин одежды» на основе представленной модели базы данных.

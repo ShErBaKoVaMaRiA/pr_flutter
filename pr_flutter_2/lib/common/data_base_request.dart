@@ -66,7 +66,7 @@ abstract class DataBaseRequest {
 
   /// Запрос для создания таблицы Types Product
   static const String _createTableTypesProduct =
-      'CREATE TABLE "$tableTypesProduct" ("id_type"	INTEGER,"name_type_product"	TEXT NOT NULL UNIQUE, PRIMARY KEY("id_type" AUTOINCREMENT))';
+      'CREATE TABLE "$tableTypesProduct" ("id_type"	INTEGER,"name_type"	TEXT NOT NULL UNIQUE, PRIMARY KEY("id_type" AUTOINCREMENT))';
 
   /// Запрос для создания таблицы Points Issue
   static const String _createTablePointsIssue =

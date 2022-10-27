@@ -23,17 +23,21 @@ class DataBaseHelper {
   Future<void> init() async {
     _appDocumentDirectory = await path.getApplicationDocumentsDirectory();
     _pathDB = join(_appDocumentDirectory.path, 'fashion_store.db');
+    debugPrint(_pathDB);
 
     if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
       sqfliteFfiInit();
       dataBase = await databaseFactoryFfi.openDatabase(_pathDB,
-          options: OpenDatabaseOptions(onCreate: (db, version) {
-            onCreateTable(db);
-          }, onUpgrade: ((db, oldVersion, newVersion) async {
-            await onUpgradeTable(db);
-          })));
+          options: OpenDatabaseOptions(
+              version: _version,
+              onCreate: (db, version) {
+                onCreateTable(db);
+              },
+              onUpgrade: ((db, oldVersion, newVersion) async {
+                await onUpgradeTable(db);
+              })));
     } else {
-      dataBase = await openDatabase(_pathDB,
+      dataBase = await openDatabase(_pathDB, version: _version,
           onUpgrade: ((db, oldVersion, newVersion) async {
         await onUpgradeTable(db);
       }), onCreate: (db, version) async {
@@ -100,9 +104,7 @@ class DataBaseHelper {
           Account(login: 'Admin_1', password: 'admin123', role_id: 1).toMap());
       db.insert(DataBaseRequest.tableAccounts,
           Account(login: 'User_1', password: 'user123', role_id: 1).toMap());
-    } on DatabaseException catch (e) {
-      print(e.result);
-    }
+    } on DatabaseException catch (e) {}
   }
 
   Future<void> onDropDataBase() async {

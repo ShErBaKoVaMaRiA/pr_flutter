@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:pr_flutter_2/core/db/data_base_helper.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DataBaseHelper.instance.init();
 
